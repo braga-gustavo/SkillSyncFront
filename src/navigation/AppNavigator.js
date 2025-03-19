@@ -2,12 +2,12 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from '../screens/HomeScreen';
-import ServiceRequestScreen from '../screens/ServiceRequestScreen';
+// import ServiceRequestScreen from '../screens/ServiceRequestScreen';
 
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
-    ServiceRequest: ServiceRequestScreen,
+    //ServiceRequest: ServiceRequestScreen,
   },
   {
     initialRouteName: 'Home',
