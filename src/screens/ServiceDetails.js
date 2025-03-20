@@ -4,13 +4,13 @@ import { useLocalSearchParams } from "expo-router";
 
 
 export default function ServiceDetails() {
-    const { id } = useLocalSearchParams();
+    const { title, description } = useLocalSearchParams();
 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Detalhes do Serviço</Text>
-            <Text style={styles.description}>Serviço ID: {id}</Text>
-            <Text style={styles.description}>Mais informações em breve...</Text>
+            <Text style={styles.description}>Titulo: {title}</Text>
+            <Text style={styles.description}>Descrição: {description}</Text>
         </View>
     );
 }

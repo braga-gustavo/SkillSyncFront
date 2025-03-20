@@ -19,7 +19,15 @@ export default function ProviderScreen() {
         data={ongoingServices}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <Card style={styles.card} onPress={() => router.push(`/service/${item.id}`)}>
+          <Card style={styles.card} onPress={() =>
+            router.push({
+              pathname: `/services/${item.id}`,
+              params: {
+                title: item.title,
+                description: item.description,
+
+              }
+            })}>
             <Card.Content>
               <Text style={styles.cardTitle}>{item.title}</Text>
               <Text style={styles.cardDescription}>{item.description}</Text>
