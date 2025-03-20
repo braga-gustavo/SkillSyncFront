@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
-import { FAB, Card, Text } from 'react-native-paper';
-import { getServiceRequests } from '../services/api';
+import { View, FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { FAB, Card } from 'react-native-paper';
+// import { getServiceRequests } from '../services/api';
 import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
-  const [requests, setRequests] = useState([]);
   const router = useRouter();
+
+
+  // Data Mocking
+  const [requests, setRequests] = useState([
+    {id: 1, title: 'Air conditioning fix', description: 'Quick and eficient service'},
+    {id: 2, title: 'Water tank cleaning', description: 'Maitenece and cleaning'},
+    {id: 3, title: 'Electrical wiring change', description: 'Residencial maitenence'},
+  ])
+
+ 
 
   useEffect(() => {
     // fetchRequests();
@@ -29,8 +38,8 @@ export default function HomeScreen() {
         renderItem={({ item }) => (
           <Card style={styles.card} onPress={() => router.push(`/service/${item.id}`)}>
             <Card.Content>
-              <Text variant="titleLarge">{item.title}</Text>
-              <Text variant="bodyMedium">{item.description}</Text>
+              <Text style={styles.title}>{item.title} </Text>
+              <Text style={styles.description}>{item.description}</Text>
             </Card.Content>
           </Card>
         )}
@@ -52,10 +61,17 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   card: {
+    backgroundColor: 'white',
     marginVertical: 8,
     padding: 10,
-    backgroundColor: 'white',
     borderRadius: 10,
+    elevation: 3,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#007b6',
+
   },
   fab: {
     position: 'absolute',
