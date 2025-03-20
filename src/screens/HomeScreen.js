@@ -8,13 +8,6 @@ export default function HomeScreen() {
   const router = useRouter();
 
 
-  // Data Mocking
-  const [requests, setRequests] = useState([
-    { id: 1, title: 'Air conditioning fix', description: 'Quick and eficient service' },
-    { id: 2, title: 'Water tank cleaning', description: 'Maitenece and cleaning' },
-    { id: 3, title: 'Electrical wiring change', description: 'Residencial maitenence' },
-  ])
-
 
 
   // useEffect(() => {
@@ -32,59 +25,34 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-                                                                                                                                                              
-      <View style={styles.container}>
-        <Text style={styles.appTitle}>Skill Sync</Text>
+      <Text style={styles.appTitle}>Skill Sync</Text>
 
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={() => router.push('/service')}>
-            <Text style={styles.buttonText}>Services</Text>
-          </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/service')}>
+          <Text style={styles.buttonText}>Services</Text>
+        </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button} onPress={() => router.push('/service')}>
-            <Text style={styles.buttonText}>Provider</Text>
-          </TouchableOpacity>
-
-         
-
-        </View>
-
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/service')}>
+          <Text style={styles.buttonText}>Provider</Text>
+        </TouchableOpacity>
 
       </View>
-
-      <FlatList
-        data={requests}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => (
-          <Card style={styles.card} onPress={() => router.push(`/service/${item.id}`)}>
-            <Card.Content>
-              <Text style={styles.title}>{item.title} </Text>
-              <Text style={styles.description}>{item.description}</Text>
-            </Card.Content>
-          </Card>
-        )}
-      />
-
-      <FAB
-        style={styles.fab}
-        icon="plus"
-        onPress={() => console.log('Adicionar serviço')}
-      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   appTitle: {
-    fontSize: 32,
+    fontSize: 40,
     fontWeight: 'bold',
     color: '#0077b6',
     marginBottom: 40,
   },
   buttonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '80%',
+    justifyContent: 'space-evenly',
+    width: '90%',
+    height: '9%'
 
   },
   button: {
@@ -103,8 +71,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f8f8f8',
-    justifyContent: 'center',
     alignItems: 'center',
+    marginTop: '35%',
     padding: 10,
   },
   card: {
