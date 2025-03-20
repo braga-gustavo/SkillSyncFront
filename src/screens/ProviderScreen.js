@@ -8,13 +8,13 @@ export default function ProviderScreen() {
 
   // Mock de serviços em andamento
   const [ongoingServices, setOngoingServices] = useState([
-    { id: 1, title: 'Conserto de Ar Condicionado', description: 'Técnico João em atendimento.' },
-    { id: 2, title: 'Limpeza de Caixa D’Água', description: 'Prestador Maria está no local.' },
+    { id: 1, title: 'Conserto de Ar Condicionado', description: 'Cliente informou que o aparelho não arma.' },
+    { id: 2, title: 'Limpeza de Caixa D’Água', description: 'Mal fluxo de agua na casa.' },
   ]);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Serviços em Andamento</Text>
+      <Text style={styles.title}>Serviços aceitos</Text>
       <FlatList
         data={ongoingServices}
         keyExtractor={(item) => item.id.toString()}

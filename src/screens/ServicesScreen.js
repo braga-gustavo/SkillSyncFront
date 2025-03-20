@@ -8,19 +8,19 @@ export default function ServicesScreen() {
 
   // Mock de serviços aguardando um prestador
   const [services, setServices] = useState([
-    { id: 1, title: 'Conserto de Ar Condicionado', description: 'Cliente esperando um prestador.' },
-    { id: 2, title: 'Limpeza de Caixa D’Água', description: 'Cliente precisa de manutenção urgente.' },
-    { id: 3, title: 'Troca de fiação elétrica', description: 'Residência precisa de um eletricista.' },
+    { id: 1, title: 'Conserto de Ar Condicionado', description: 'Aparelho não arma.' },
+    { id: 2, title: 'Limpeza de Caixa D’Água', description: 'Higienização.' },
+    { id: 3, title: 'Troca de fiação elétrica', description: 'Algumas partes da casa estão sem energia.' },
   ]);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Serviços Aguardando</Text>
+      <Text style={styles.title}>Seus Serivços</Text>
       <FlatList
         data={services}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <Card style={styles.card} onPress={() => router.push(`/service/${item.id}`)}>
+          <Card style={styles.card} onPress={() => router.push(`/services/${item.id}`)}>
             <Card.Content>
               <Text style={styles.cardTitle}>{item.title}</Text>
               <Text style={styles.cardDescription}>{item.description}</Text>

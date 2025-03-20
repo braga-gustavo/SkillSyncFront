@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { FAB, Card } from 'react-native-paper';
-// import { getServiceRequests } from '../services/api';
 import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
@@ -28,11 +27,11 @@ export default function HomeScreen() {
       <Text style={styles.appTitle}>Skill Sync</Text>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/service')}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/services')}>
           <Text style={styles.buttonText}>Services</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/service')}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/provider')}>
           <Text style={styles.buttonText}>Provider</Text>
         </TouchableOpacity>
 
