@@ -10,16 +10,16 @@ export default function HomeScreen() {
 
   // Data Mocking
   const [requests, setRequests] = useState([
-    {id: 1, title: 'Air conditioning fix', description: 'Quick and eficient service'},
-    {id: 2, title: 'Water tank cleaning', description: 'Maitenece and cleaning'},
-    {id: 3, title: 'Electrical wiring change', description: 'Residencial maitenence'},
+    { id: 1, title: 'Air conditioning fix', description: 'Quick and eficient service' },
+    { id: 2, title: 'Water tank cleaning', description: 'Maitenece and cleaning' },
+    { id: 3, title: 'Electrical wiring change', description: 'Residencial maitenence' },
   ])
 
- 
 
-  useEffect(() => {
-    // fetchRequests();
-  }, []);
+
+  // useEffect(() => {
+  //   fetchRequests();
+  // }, []);
 
   // const fetchRequests = async () => {
   //   try {
@@ -32,6 +32,26 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
+
+      <View style={styles.container}>
+        <Text style={styles.appTitle}>Skill Sync</Text>
+
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={() => router.push('/service')}>
+            <Text style={styles.buttonText}>Services</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.button} onPress={() => router.push('/service')}>
+            <Text style={styles.buttonText}>Provider</Text>
+          </TouchableOpacity>
+
+         
+
+        </View>
+
+
+      </View>
+
       <FlatList
         data={requests}
         keyExtractor={(item) => item.id.toString()}
@@ -55,9 +75,36 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  appTitle: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#0077b6',
+    marginBottom: 40,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '80%',
+
+  },
+  button: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 191, 255, 0.6)',
+    paddingVertical: 15,
+    marginHorizontal: 10,
+    borderRadius: 15,
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontSize: 18,
+    color: '#fffff',
+    fontWeight: 'bold',
+  },
   container: {
     flex: 1,
     backgroundColor: '#f8f8f8',
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 10,
   },
   card: {
