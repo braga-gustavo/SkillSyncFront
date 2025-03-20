@@ -32,7 +32,7 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-
+                                                                                                                                                              
       <View style={styles.container}>
         <Text style={styles.appTitle}>Skill Sync</Text>
 
