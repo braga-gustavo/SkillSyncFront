@@ -9,17 +9,17 @@ export default function HomeScreen() {
   const router = useRouter();
 
   useEffect(() => {
-    fetchRequests();
+    // fetchRequests();
   }, []);
 
-  const fetchRequests = async () => {
-    try {
-      const response = await getServiceRequests();
-      setRequests(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const fetchRequests = async () => {
+  //   try {
+  //     const response = await getServiceRequests();
+  //     setRequests(response.data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   return (
     <View style={styles.container}>
