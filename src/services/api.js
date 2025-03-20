@@ -13,4 +13,4 @@ export const createServiceRequest = (data) => {
   return api.post('/service-requests', data);
 };
 
-// Adicione outras funções conforme necessário
+
