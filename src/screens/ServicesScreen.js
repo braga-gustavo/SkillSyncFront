@@ -15,7 +15,7 @@ export default function ServicesScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#f8f8f8" translucent={true} />
+      <StatusBar barStyle="dark-content" backgroundColor="'rgba(55, 112, 197, 0.97)'" translucent={true} />
       <Text style={styles.title}>Seus Serivços</Text>
       <FlatList
         data={services}
@@ -43,15 +43,15 @@ export default function ServicesScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'rgba(55, 112, 197, 0.97)',
     flex: 1,
-    backgroundColor: '#f8f8f8',
     padding: 20,
   },
   title: {
+    fontFamily: 'Montserrat_700Bold',
     fontSize: 24,
-    fontWeight: 'bold',
     marginBottom: 20,
-    color: '#0077b6',
+    color: '#FFFFFF',
   },
   card: {
     backgroundColor: 'white',
@@ -61,11 +61,12 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   cardTitle: {
+    fontFamily: 'Montserrat_600Semibold',
     fontSize: 18,
-    fontWeight: 'bold',
     color: '#0077b6',
   },
   cardDescription: {
+    fontFamily: 'Montserrat_400Regular',
     fontSize: 14,
     color: '#666',
   },

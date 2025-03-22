@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, StyleSheet, Text, TouchableOpacity, StatusBar } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
-import { FAB, Card } from 'react-native-paper';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
   const router = useRouter();
+
 
 
   // useEffect(() => {
@@ -24,22 +24,17 @@ export default function HomeScreen() {
   return (
 
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
-      <View style={styles.container}>
+      <StatusBar barStyle="dark-content" backgroundColor="rgba(55, 112, 197, 0.97)" />
+      <Text style={styles.appTitle}>Skill Sync</Text>
 
-        <StatusBar barStyle="dark-content" backgroundColor="#f8f8f8" translucent={true} />
-        <Text style={styles.appTitle}>Skill Sync</Text>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/services')}>
+          <Text style={styles.buttonText}>Services</Text>
+        </TouchableOpacity>
 
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={() => router.push('/services')}>
-            <Text style={styles.buttonText}>Services</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button} onPress={() => router.push('/provider')}>
-            <Text style={styles.buttonText}>Provider</Text>
-          </TouchableOpacity>
-
-        </View>
-
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/provider')}>
+          <Text style={styles.buttonText}>Provider</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView >
 
@@ -48,38 +43,39 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   appTitle: {
+    fontFamily: 'Montserrat_700Bold',
     fontSize: 40,
-    fontWeight: 'bold',
-    color: '#0077b6',
+    color: '#FFFFFF',
     marginBottom: 40,
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    width: '90%',
-    height: '10%'
-
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    gap: 20,
+    marginTop: 40,
   },
   button: {
-    flex: 1,
-    backgroundColor: 'rgba(0, 191, 255, 0.6)',
+    width: '80%',
+    backgroundColor: 'rgb(29, 71, 105)',
     paddingVertical: 15,
-    marginHorizontal: 10,
+    marginBottom: 20,
     borderRadius: 15,
     alignItems: 'center',
   },
   buttonText: {
+    fontFamily: 'Montserrat_500Medium',
     fontSize: 18,
-    color: '#fffff',
-    fontWeight: 'bold',
+    color: '#FFFFFF',
+
   },
   container: {
     flex: 1,
-    backgroundColor: '#f8f8f8',
+    backgroundColor: 'rgba(55, 112, 197, 0.97)',
     alignItems: 'center',
-    marginTop: '20%',
+    justifyContent: 'flex-start',
+    paddingTop: 90,
     padding: 10,
-    background: 'rgb(2, 0, 36)',
   },
   card: {
     backgroundColor: 'white',
