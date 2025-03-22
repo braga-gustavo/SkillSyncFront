@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, FlatList, Text, StyleSheet } from 'react-native';
+import { View, FlatList, Text, StyleSheet, StatusBar } from 'react-native';
 import { Card } from 'react-native-paper';
 import { useRouter } from 'expo-router';
 
@@ -15,6 +15,7 @@ export default function ServicesScreen() {
 
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="dark-content" backgroundColor="#f8f8f8" translucent={true} />
       <Text style={styles.title}>Seus Serivços</Text>
       <FlatList
         data={services}

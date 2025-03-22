@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, FlatList, StyleSheet, Text, TouchableOpacity, StatusBar } from 'react-native';
 import { FAB, Card } from 'react-native-paper';
 import { useRouter } from 'expo-router';
 
@@ -24,6 +24,7 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
+        <StatusBar barStyle="dark-content" backgroundColor="#f8f8f8" translucent={true} />
       <Text style={styles.appTitle}>Skill Sync</Text>
 
       <View style={styles.buttonContainer}>
