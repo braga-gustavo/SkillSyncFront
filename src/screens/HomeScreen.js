@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, StyleSheet, Text, TouchableOpacity, StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import { FAB, Card } from 'react-native-paper';
 import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
   const router = useRouter();
-
-
 
 
   // useEffect(() => {
@@ -23,21 +22,27 @@ export default function HomeScreen() {
   // };
 
   return (
-    <View style={styles.container}>
+
+    <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+      <View style={styles.container}>
+
         <StatusBar barStyle="dark-content" backgroundColor="#f8f8f8" translucent={true} />
-      <Text style={styles.appTitle}>Skill Sync</Text>
+        <Text style={styles.appTitle}>Skill Sync</Text>
 
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/services')}>
-          <Text style={styles.buttonText}>Services</Text>
-        </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={() => router.push('/services')}>
+            <Text style={styles.buttonText}>Services</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/provider')}>
-          <Text style={styles.buttonText}>Provider</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={() => router.push('/provider')}>
+            <Text style={styles.buttonText}>Provider</Text>
+          </TouchableOpacity>
+
+        </View>
 
       </View>
-    </View>
+    </SafeAreaView >
+
   );
 }
 
@@ -52,7 +57,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     width: '90%',
-    height: '9%'
+    height: '10%'
 
   },
   button: {
@@ -72,8 +77,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f8f8f8',
     alignItems: 'center',
-    marginTop: '35%',
+    marginTop: '20%',
     padding: 10,
+    background: 'rgb(2, 0, 36)',
   },
   card: {
     backgroundColor: 'white',
@@ -94,4 +100,4 @@ const styles = StyleSheet.create({
     bottom: 20,
     backgroundColor: '#6200ea',
   },
-});
+})

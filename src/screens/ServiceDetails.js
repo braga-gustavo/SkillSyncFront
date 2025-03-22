@@ -10,15 +10,7 @@ export default function ServiceDetails() {
     return (
         <View style={styles.container}>
             <StatusBar barStyle="dark-content" backgroundColor="#f8f8f8" translucent={true} />
-            <Card style={styles.card} onPress={() =>
-                router.push({
-                    pathname: `/services/${item.id}`,
-                    params: {
-                        title: item.title,
-                        description: item.description,
-
-                    }
-                })}>
+            <Card style={styles.card}>
                 <Card.Content>
                     <Text style={styles.title}>Detalhes do Serviço</Text>
                     <Text style={styles.description}>Titulo: {title}</Text>
