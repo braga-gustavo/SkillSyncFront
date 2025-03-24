@@ -29,11 +29,11 @@ export default function HomeScreen() {
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={() => router.push('/services')}>
-          <Text style={styles.buttonText}>Services</Text>
+          <Text style={styles.buttonText}>Serviços</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={() => router.push('/provider')}>
-          <Text style={styles.buttonText}>Provider</Text>
+          <Text style={styles.buttonText}>Prestador</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView >
